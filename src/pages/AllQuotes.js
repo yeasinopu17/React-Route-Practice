@@ -1,6 +1,10 @@
-// import classes from './AllQuotes.module.css';
+import QuoteList from '../components/quotes/QuoteList';
+const DUMMY_QUOTES = [
+    { id: 'q1', author: 'Max', text: 'Learning React is fun' },
+    { id: 'q1', author: 'L', text: 'Stranger Things' },
+];
 
 const AllQuotes = (props) => {
-    return <h1>All quote page</h1>;
+    return <QuoteList quotes={DUMMY_QUOTES} />;
 };
 export default AllQuotes;

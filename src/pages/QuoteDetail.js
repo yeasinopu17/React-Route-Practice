@@ -1,4 +1,4 @@
-import { useParams, Route } from 'react-router-dom';
+import { useParams, Route, Link } from 'react-router-dom';
 import Comments from '../components/comments/Comments';
 import HighlightedQuote from '../components/quotes/HighlightedQuote';
 
@@ -19,6 +19,15 @@ const QuoteDetail = (props) => {
     return (
         <>
             <HighlightedQuote author={quote.author} text={quote.text} />
+
+            <Route path={`/quotes/${params.quoteId}/`} exact>
+                <div className="centered">
+                    <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}>
+                        Load Comments
+                    </Link>
+                </div>
+            </Route>
+
             <h1>Quote Details page</h1>
             <p>The param: {params.quoteId}</p>
             <Route path={`/quotes/${params.quoteId}/comments`}>
